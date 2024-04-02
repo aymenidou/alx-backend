@@ -33,7 +33,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        ''''''
+        '''get a page of data from the csv file'''
         assert type(page) is int and type(page_size) is int
         assert page > 0 and page_size > 0
         first_idx, last_idx = index_range(page, page_size)
