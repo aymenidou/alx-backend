@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''0x01-caching'''
 from base_caching import BaseCaching
 from collections import OrderedDict
@@ -21,7 +22,7 @@ class FIFOCache(BaseCaching):
         self.cache_data[key] = item
         if (len(self.cache_data) > BaseCaching.MAX_ITEMS):
             first_key, _ = self.cache_data.popitem(False)
-            print("DISCARD:", first_key)
+            print("DISCARD: {}".format(first_key))
 
     def get(self, key):
         """ Get an item by key
