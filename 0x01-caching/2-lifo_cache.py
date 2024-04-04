@@ -5,7 +5,7 @@ from collections import OrderedDict
 
 
 class LIFOCache(BaseCaching):
-    """LIFOCache"""
+    """LIFOCache class"""
 
     def __init__(self):
         """Initialize
