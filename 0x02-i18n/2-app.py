@@ -29,7 +29,7 @@ def index():
 @babel.localeselector
 def get_locale():
     '''determine the best match with our supported languages.'''
-    user_languages = request.accept_languages.languages()
+    user_languages = request.accept_languages
     # Find the first intersection between user preferences
     #  and supported languages
     for language in user_languages:
