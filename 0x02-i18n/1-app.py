@@ -9,6 +9,7 @@ babel = Babel()
 
 
 class Config:
+    '''Config class contain Babel configurations'''
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
