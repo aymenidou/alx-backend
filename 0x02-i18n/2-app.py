@@ -3,8 +3,8 @@
 starts a Flask web application
 """
 
-from flask import Flask, render_template
-from flask_babel import Babel, request
+from flask import Flask, render_template, request
+from flask_babel import Babel
 babel = Babel()
 
 
@@ -23,6 +23,7 @@ babel.init_app(app)
 @app.route('/', strict_slashes=False)
 def index():
     """display a HTML page"""
+    print(get_locale())
     return render_template('2-index.html')
 
 
