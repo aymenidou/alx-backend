@@ -23,21 +23,21 @@ babel.init_app(app)
 @app.route('/', strict_slashes=False)
 def index():
     """display a HTML page"""
-    print(get_locale())
     return render_template('2-index.html')
 
 
 @babel.localeselector
 def get_locale():
     '''determine the best match with our supported languages.'''
-    user_languages = request.accept_languages
+    user_languages = request.accept_languages.best_match(
+        app.config['LANGUAGES'])
     # Find the first intersection between user preferences
     #  and supported languages
-    for language in user_languages:
-        if language in app.config['LANGUAGES']:
-            return language
+    # for language in user_languages:
+    #     if language in app.config['LANGUAGES']:
+    #         return language
     # Default to the app's default locale if no match found
-    return app.config['BABEL_DEFAULT_LOCALE']
+    return user_languages
 
 
 if __name__ == '__main__':
