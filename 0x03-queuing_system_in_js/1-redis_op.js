@@ -20,7 +20,7 @@ function displaySchoolValue(schoolName) {
             console.error(`Error retrieving value for key ${schoolName}: ${err}`);
             return;
         }
-        console.log(`Value for ${schoolName}: ${reply}`);
+        console.log(`${reply}`);
     });
 }
 displaySchoolValue('Holberton');
